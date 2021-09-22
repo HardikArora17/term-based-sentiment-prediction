@@ -1,15 +1,15 @@
 # term-based-sentiment-prediction
 
-For properly running the code follow the below steps:
+      For properly running the code follow the below steps:
 
-1) cd path/absa
-2) Install all the dependencies using the requirement.txt
-3) If you want to train the model its code is availabel at notebooks/main_intern_train.py
-4) For getting the results for any csv file you can run the code at src/evaluation.py.
+      1) cd path/absa
+      2) Install all the dependencies using the requirement.txt
+      3) If you want to train the model its code is availabel at notebooks/main_intern_train.py
+      4) For getting the results for any csv file you can run the code at src/evaluation.py.
 
-   Results are stored at data/results/test_data.csv
+         Results are stored at data/results/test_data.csv
 
-5) If you want to see a live demo of the project you can run it by typing the following command: streamlit run src/evaluation_streamlit.py
+      5) If you want to see a live demo of the project you can run it by typing the following command: streamlit run src/evaluation_streamlit.py
 
 
 
@@ -109,6 +109,7 @@ Predicted- Negative
 
 Aspect Name- Sheets
 True-         Negative
+
 Predicted- Neutral
 
 ●	Love this app and it works supertly for planning work.
@@ -116,6 +117,7 @@ Predicted- Neutral
 Aspect Name- planning
 
 True-Neutral
+
 Predicted-Positive
 
 **4)  Some vague sentences**
@@ -125,6 +127,7 @@ Predicted-Positive
 Aspect Name- todo list
 
 True- Positive
+
 Predicted- Negative
 
 **5) Biased a little towards negative words**
@@ -134,12 +137,14 @@ Predicted- Negative
 Aspect Name- tool
 
 True      -  positive
+
 Predicted -  negative
 
 ●	Can't we add reminders to tasks in the free version?
 
 Aspect Name- free
 True      -  neutral
+
 Predicted -  negative
 
 ●	i want to clear my card details for my profile, can you help me on here?
@@ -147,5 +152,6 @@ Predicted -  negative
  Aspect Name- profile
 
  True-       Negative
+ 
  Predicted-  Neutral
 
