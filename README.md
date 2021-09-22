@@ -13,7 +13,10 @@ For properly running the code follow the below steps:
 
 
 
-Other things about the model can be found below
+
+**MODEL ARCHITECTURE**
+
+![alt text](https://github.com/HardikArora17/term-based-sentiment-prediction/blob/main/model_architecture.jpg)
 
 **MODEL DESCRIPTION**
 
@@ -39,10 +42,110 @@ Due to all this I used approach 3 for creating the word embeddings , I used stan
 
 Since this is a multi class problem I used a cross entropy loss as my loss function . I used Adam optimizer with a learning rate of 0.001 . All the dropout layers have a dropout rate of 0.3. I trained the model for 30 epochs ,with a batch size of 16 on Google Colab.
 
+**LOSS CURVE**
 
-
+![alt text](https://github.com/HardikArora17/term-based-sentiment-prediction/blob/main/loss_curve.png)
 
 For the purpose of evaluating my model I used  f1 score (both label wise and overall)
 
-Here are the scores for my model on the validation set:
+![alt text](https://github.com/HardikArora17/term-based-sentiment-prediction/blob/main/image.png)
+
+I preferred using 100 dimension embeddings due its more f1 score on the positive class ,and as mentioned the score for positive class has more importance.
+
+**Error Analysis**
+
+**1)	Confusion due to neutral looking like negative words(or semantically less negative words)**
+
+Example-
+●	 This app works great but could you please PLEASE add an audio alert?
+
+Aspect Name- audio
+
+Predicted- neutral  
+
+True-Negative
+
+●	 I wasted so much time with different project managers itâc™s ridiculous because the air table was right there all along.
+      
+Aspect Name- project
+
+Predicted- neutral
+
+True-Negative
+
+●	 Less in the free version, it has enough features to work on projects.
+
+Aspect Name- free
+
+Predicted- neutral
+
+True-Negative
+
+
+
+
+**2) Aspect term itself has some negative sentiment**
+
+●	good afternoon, i would like to remove a logo i no longer use, its in the logo section.
+
+Aspect Phrase- remove
+            
+Predicted- Negative
+
+True-      Neutral
+
+**3) Some errors in the dataset itself**
+
+●	notion for desktop, web and mobile is good, but the ipad version is not good, interface is not properly scaled for the screen size and resolution.
+
+Aspect Term- Ipad version
+
+True - Positive
+
+Predicted- Negative 
+
+         
+●	google docs and sheets have this.
+
+Aspect Name- Sheets
+True-         Negative
+Predicted- Neutral
+
+●	Love this app and it works supertly for planning work.
+
+Aspect Name- planning
+
+True-Neutral
+Predicted-Positive
+
+**4)  Some vague sentences**
+
+●	one of the main principles of gtd is having all of the todo list in one place seems simple but has so much benefit.
+
+Aspect Name- todo list
+
+True- Positive
+Predicted- Negative
+
+**5) Biased a little towards negative words**
+
+●	great tool overall, but booting up the application on android takes way too long.
+
+Aspect Name- tool
+
+True      -  positive
+Predicted -  negative
+
+●	Can't we add reminders to tasks in the free version?
+
+Aspect Name- free
+True      -  neutral
+Predicted -  negative
+
+●	i want to clear my card details for my profile, can you help me on here?
+
+ Aspect Name- profile
+
+ True-       Negative
+ Predicted-  Neutral
 
